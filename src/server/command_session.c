@@ -62,7 +62,7 @@ int server_control_session(){
 		struct timeval current;
 		gettimeofday(&current, NULL);
 		time_t diff_sec = current.tv_sec - last_check[i].tv_sec;
-		if(diff_sec > 600){status = "\e[1;31m[-]\e[0m Inactive";}
+		if(diff_sec > 300){status = "\e[1;31m[-]\e[0m Inactive";}
                 printf("%-12d%-25s%s %ld seconds ago\n", i + 1, get_socket_addr(client_socket[i]), status, diff_sec);
             }
 	    printf("\n");
